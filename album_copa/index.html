@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Álbum da Copa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🏆 Álbum da Copa</h1>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-label">Completado</span>
+                    <span class="stat-value" id="percent-complete">0%</span>
+                    <span class="stat-absolute" id="abs-complete">0 figurinhas</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Faltam</span>
+                    <span class="stat-value" id="percent-missing">100%</span>
+                    <span class="stat-absolute" id="abs-missing">981 figurinhas</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Repetidas</span>
+                    <span class="stat-value repeated-text" id="total-repeated">0</span>
+                    <span class="stat-absolute">figurinhas</span>
+                </div>
+            </div>
+            
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+            </div>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Tudo</button>
+                <button class="filter-btn" data-filter="missing">Faltantes</button>
+                <button class="filter-btn" data-filter="repeated">Repetidas</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="album-container">
+        <!-- Renderizado dinamicamente via JS -->
+    </main>
+    
+    <script src="./app.js"></script>
+</body>
+</html>

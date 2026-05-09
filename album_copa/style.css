@@ -1,0 +1,340 @@
+:root {
+    /* Cores Premium inspiradas na Copa (Bordô e Dourado) */
+    --bg-color: #f8f9fa;
+    --header-bg: #8A1538; /* Bordô Copa */
+    --gold: #EEA31B;
+    --text-light: #ffffff;
+    --text-dark: #212529;
+    --gray-light: #e9ecef;
+    --gray-dark: #6c757d;
+    --success: #198754;
+    --primary: #0d6efd;
+    
+    --card-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    padding-bottom: 50px;
+}
+
+header {
+    background: var(--header-bg);
+    color: var(--text-light);
+    padding: 30px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--gold);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #e9ecef;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.stat-absolute {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2px;
+}
+
+.repeated-text {
+    color: var(--gold);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    background: rgba(238, 163, 27, 0.1);
+}
+
+.filter-btn.active {
+    background: var(--gold);
+    color: var(--header-bg);
+}
+
+/* Album Container */
+#album-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.team-section {
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.team-flag {
+    width: 40px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.team-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.team-stats {
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--gray-dark);
+    background: rgba(0,0,0,0.05);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.stickers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 12px;
+}
+
+/* Sticker Card */
+.sticker {
+    background: #fff;
+    border: 2px solid var(--gray-light);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.sticker.have {
+    border-color: var(--success);
+    background: #f0fdf4;
+}
+
+.sticker.repeated {
+    border-color: var(--primary);
+    background: #eff6ff;
+}
+
+.sticker-header {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--text-dark);
+    background: var(--gray-light);
+}
+
+.sticker.have .sticker-header {
+    background: var(--success);
+    color: white;
+}
+
+.sticker.repeated .sticker-header {
+    background: var(--primary);
+    color: white;
+}
+
+.sticker-controls {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.btn-minus, .btn-plus {
+    background: #e9ecef;
+    border: none;
+    border-radius: 4px;
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.1s;
+}
+
+.btn-minus:hover, .btn-plus:hover {
+    background: #ced4da;
+}
+
+.sticker.have .btn-plus { background: #d1e7dd; color: #0f5132; }
+.sticker.repeated .btn-plus, .sticker.repeated .btn-minus { background: #cfe2ff; color: #084298; }
+
+.count {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--gray-dark);
+}
+
+.sticker.have .count { color: var(--success); }
+.sticker.repeated .count { color: var(--primary); }
+
+@media (max-width: 600px) {
+    .stickers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 8px;
+    }
+    .sticker-header {
+        font-size: 0.85rem;
+    }
+    .stats-container {
+        flex-direction: row;
+        gap: 5px;
+    }
+    .stat-value {
+        font-size: 1.2rem;
+    }
+    .stat-label {
+        font-size: 0.7rem;
+    }
+}
+
+/* Custom UI for Missing Tab */
+.missing-pill-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-missing-add {
+    background: linear-gradient(145deg, #ffffff, #f0f4f8);
+    border: 2px dashed #cbd5e1;
+    color: #64748b;
+    font-weight: 800;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.btn-missing-add:hover {
+    background: #ffffff;
+    border-style: solid;
+    border-color: var(--gold);
+    color: var(--header-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(238, 163, 27, 0.25);
+}
+
+.btn-missing-undo {
+    background: var(--header-bg);
+    border: none;
+    color: white;
+    font-weight: 800;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-missing-undo:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    filter: brightness(1.15);
+}
+
+.hidden {
+    display: none !important;
+}
